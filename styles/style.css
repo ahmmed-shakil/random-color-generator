@@ -132,6 +132,9 @@ footer {
     display: block;
     margin-bottom: 10px;
   }
+  nav > div button {
+    margin-bottom: 0;
+  }
   .buttons {
     display: flex;
     flex-direction: column;
