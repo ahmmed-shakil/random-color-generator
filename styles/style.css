@@ -98,7 +98,6 @@ main {
   padding: 5px;
   font-size: var(--font_sm);
   color: var(--primary);
-  margin-top: 5px;
   display: none;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
