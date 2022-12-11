@@ -55,15 +55,6 @@ nav {
   border-radius: 100%;
 }
 
-@keyframes slideInfromRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 main {
   width: 50%;
   margin: auto;
@@ -109,15 +100,6 @@ main {
   margin: 20px 0;
 }
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .copy {
   cursor: pointer;
   /* border: 1px solid grey; */
@@ -149,6 +131,27 @@ footer {
   background-color: var(--secondary);
   color: var(--primary);
 }
+
+/* Keyframes */
+@keyframes slideInfromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
 
 @media (max-width: 792px) {
   :root {

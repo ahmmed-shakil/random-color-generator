@@ -9,22 +9,37 @@ function getByClass(name) {
 }
 
 // change circle colors
-const circleColors = [
+colors = new Array(
   "red",
+  "orange",
   "green",
   "blue",
-  "yellow",
-  "black",
-  "violet",
-  "orange",
-];
+  "brown",
+  "purple",
+  "gray",
+  "yellow"
+);
 
-let i = 0;
-setInterval(() => {
-  i = i % circleColors;
-  getElement("one").style.backgroundColor = circleColors[i];
-  i++;
-}, 1000);
+colorIndex = 0;
+
+function changeColor(id) {
+  getElement(id).style.backgroundColor = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+}
+
+function startColorChange() {
+  setInterval(function () {
+    changeColor("one");
+  }, 1000);
+  setInterval(function () {
+    changeColor("two");
+  }, 1100);
+  setInterval(function () {
+    changeColor("three");
+  }, 1200);
+}
+
+window.onload = startColorChange();
 
 // Take references
 
@@ -48,7 +63,9 @@ function setOnDom() {
   footer.style.backgroundColor = bgColor;
   copied.style.display = "none";
   display.style.display = "block";
-  console.log(borderBtn);
+  if (bgColor === "#ffffff" || bgColor === "rgb(255,255,255)") {
+    footer.style.color = "black";
+  }
   borderBtn.forEach(function (btn) {
     btn.style.border = `1px solid ${bgColor}`;
   });
