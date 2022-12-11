@@ -4,6 +4,8 @@ const colorNameContainer = document.getElementById("color");
 const copied = document.getElementById("copied");
 let bgColor = "white";
 const footer = document.getElementById("footer");
+const display = document.getElementById("display");
+display.style.display = "none";
 
 // Set elements in DOM
 function setOnDom() {
@@ -14,6 +16,7 @@ function setOnDom() {
   copied.textContent = "";
   footer.style.backgroundColor = bgColor;
   copied.style.display = "none";
+  display.style.display = "block";
 }
 
 // Get Hex color function

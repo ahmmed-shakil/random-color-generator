@@ -42,10 +42,20 @@ nav {
   position: static;
 }
 
+@keyframes slideInfromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 main {
   width: 50%;
   margin: auto;
   min-height: 80vh;
+  animation: 1s ease-out 0s 1 slideInfromRight;
 }
 
 .main-header {
@@ -65,12 +75,17 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  animation: 1s ease-out 0s 1 slideInfromRight;
 }
 
 .color-container {
   background-color: antiquewhite;
   padding: 10px;
   font-weight: 500;
+}
+
+.buttons {
+  margin: 20px 0;
 }
 
 @keyframes slideInFromLeft {
@@ -100,6 +115,7 @@ main {
   color: var(--primary);
   display: none;
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  margin: 0;
 }
 
 footer {
