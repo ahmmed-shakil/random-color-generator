@@ -1,22 +1,57 @@
 // Take references
-const container = document.getElementById("container");
-const colorNameContainer = document.getElementById("color");
-const copied = document.getElementById("copied");
+
 let bgColor = "white";
-const footer = document.getElementById("footer");
-const display = document.getElementById("display");
+function getElement(id) {
+  return document.getElementById(id);
+}
+function getByClass(name) {
+  return document.querySelectorAll(name);
+}
+
+// change circle colors
+const circleColors = [
+  "red",
+  "green",
+  "blue",
+  "yellow",
+  "black",
+  "violet",
+  "orange",
+];
+
+let i = 0;
+setInterval(() => {
+  i = i % circleColors;
+  getElement("one").style.backgroundColor = circleColors[i];
+  i++;
+}, 1000);
+
+// Take references
+
+// const container = document.getElementById("container");
+const container = getElement("container");
+const colorNameContainer = getElement("color");
+const show = getElement("show");
+const copied = getElement("copied");
+const footer = getElement("footer");
+const display = getElement("display");
 display.style.display = "none";
+const borderBtn = getByClass(".border");
 
 // Set elements in DOM
 function setOnDom() {
   container.style.backgroundColor = bgColor;
   colorNameContainer.textContent = bgColor;
-  colorNameContainer.style.color = bgColor;
-  navigator.clipboard.writeText(bgColor);
+  show.style.backgroundColor = bgColor;
+  // borderBtn.style.border = `1px solid ${bgColor}`;
   copied.textContent = "";
   footer.style.backgroundColor = bgColor;
   copied.style.display = "none";
   display.style.display = "block";
+  console.log(borderBtn);
+  borderBtn.forEach(function (btn) {
+    btn.style.border = `1px solid ${bgColor}`;
+  });
 }
 
 // Get Hex color function
@@ -66,4 +101,6 @@ function getRGBColor() {
 function copy() {
   copied.textContent = "The color code has been copied!";
   copied.style.display = "inline-block";
+
+  navigator.clipboard.writeText(bgColor);
 }

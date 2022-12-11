@@ -25,6 +25,7 @@
     <!-- NavBar -->
     <nav>
       <h3>Color Generator</h3>
+
       <div>
         <button>
           <a
@@ -38,15 +39,20 @@
     <!-- Main section -->
     <main>
       <h4 class="main-header">Generate Random Background Color :</h4>
-      <p>You can choose between hex colors and rgb colors</p>
+      <span class="circles">
+        <div class="circle" id="one"></div>
+        <div class="circle" id="two"></div>
+        <div class="circle" id="three"></div>
+      </span>
 
       <section id="container"></section>
       <section id="display">
         <section class="color-div">
-          <h4 class="color-container">
-            Genrated Color : <span id="color">Not generated</span>
+          <h4 class="color-container border">
+            Color : <span id="color">Not generated</span>
           </h4>
-          <p class="copy" onclick="copy()">Copy to clipboard</p>
+          <div id="show"></div>
+          <p class="copy border" onclick="copy()">Copy</p>
         </section>
       </section>
 
@@ -56,6 +62,14 @@
         <button onclick="getHexColor()">Generate HEX Color</button>
         <button onclick="getRGBColor()">Generate RGB Color</button>
       </section>
+      <small style="font-size: 12px"
+        ><i
+          ><b
+            >note : Click on any button to generate a random color and click
+            copy to copy the color code your clipboard</b
+          ></i
+        ></small
+      >
     </main>
     <!-- Footer -->
     <footer id="footer">&copy;Shakil Ahmmed || 2022</footer>
