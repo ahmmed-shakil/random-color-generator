@@ -28,13 +28,13 @@ function changeColor(id) {
 }
 
 function startColorChange() {
-  setInterval(function () {
+  const intervalOne = setInterval(function () {
     changeColor("one");
   }, 1000);
-  setInterval(function () {
+  const intervalTwo = setInterval(function () {
     changeColor("two");
   }, 1100);
-  setInterval(function () {
+  const intervalThree = setInterval(function () {
     changeColor("three");
   }, 1200);
 }
