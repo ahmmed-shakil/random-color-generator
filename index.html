@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+    <title>Random color generator</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+      *,
+      body,
+      *::before,
+      *::after {
+        font-family: "Ubuntu", sans-serif;
+      }
+    </style>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <h3>Color Generator</h3>
+      <div>
+        <button>
+          <a href="http://" target="_blank">Documentation</a>
+        </button>
+      </div>
+    </nav>
+    <!-- Main section -->
+    <main>
+      <h4 class="main-header">Generate Random Background Color :</h4>
+      <p>You can choose between hex colors or rgb colors</p>
+
+      <section id="container"></section>
+      <section class="color-div">
+        <h4 class="color-container">
+          Genrated Color : <span id="color">Not generated</span>
+        </h4>
+        <p class="copy" onclick="copy()">Copy to clipboard</p>
+      </section>
+
+      <p id="copied"></p>
+
+      <section class="buttons">
+        <button onclick="getHexColor()">Generate HEX Color</button>
+        <button onclick="getRGBColor()">Generate RGB Color</button>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer">&copy;Shakil Ahmmed || 2022</footer>
+    <!-- Javascript -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
