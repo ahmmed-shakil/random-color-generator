@@ -64,9 +64,7 @@ function setOnDom() {
   footer.style.backgroundColor = bgColor;
   copied.style.display = "none";
   display.style.display = "block";
-  if (bgColor === "#ffffff" || bgColor === "rgb(255,255,255)") {
-    footer.style.color = "black";
-  }
+
   borderBtn.forEach(function (btn) {
     btn.style.border = `1px solid ${bgColor}`;
   });
@@ -107,8 +105,10 @@ function getHexColor() {
     color += num2;
   }
 
-  console.log("audio");
   bgColor = color;
+  if (bgColor === "#ffffff") {
+    footer.style.color = "black";
+  }
   setOnDom();
 }
 
@@ -118,6 +118,11 @@ function getRGBColor() {
   const green = Math.round(Math.random() * 255);
   const blue = Math.round(Math.random() * 255);
   bgColor = `rgb(${red},${green},${blue})`;
+  if (red > 200 && green > 200 && blue > 200) {
+    footer.style.color = "black";
+  } else {
+    footer.style.color = "white";
+  }
   setOnDom();
 }
 
