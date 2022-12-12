@@ -8,6 +8,9 @@ function getByClass(name) {
   return document.querySelectorAll(name);
 }
 
+// Play Audio
+const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+
 // change circle colors
 colors = new Array(
   "red",
@@ -42,8 +45,6 @@ function startColorChange() {
 window.onload = startColorChange();
 
 // Take references
-
-// const container = document.getElementById("container");
 const container = getElement("container");
 const colorNameContainer = getElement("color");
 const show = getElement("show");
@@ -52,13 +53,13 @@ const footer = getElement("footer");
 const display = getElement("display");
 display.style.display = "none";
 const borderBtn = getByClass(".border");
+const docs_btn = getElement("docs");
 
 // Set elements in DOM
 function setOnDom() {
   container.style.backgroundColor = bgColor;
   colorNameContainer.textContent = bgColor;
   show.style.backgroundColor = bgColor;
-  // borderBtn.style.border = `1px solid ${bgColor}`;
   copied.textContent = "";
   footer.style.backgroundColor = bgColor;
   copied.style.display = "none";
@@ -68,6 +69,10 @@ function setOnDom() {
   }
   borderBtn.forEach(function (btn) {
     btn.style.border = `1px solid ${bgColor}`;
+  });
+  audio.play();
+  docs_btn.addEventListener("click", function () {
+    audio.play();
   });
 }
 
@@ -101,6 +106,8 @@ function getHexColor() {
 
     color += num2;
   }
+
+  console.log("audio");
   bgColor = color;
   setOnDom();
 }
@@ -118,6 +125,7 @@ function getRGBColor() {
 function copy() {
   copied.textContent = "The color code has been copied!";
   copied.style.display = "inline-block";
+  audio.play();
 
   navigator.clipboard.writeText(bgColor);
 }
